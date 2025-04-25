@@ -1,0 +1,170 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Dashboard - SaaS Platform{% endblock %}
+
+{% block dashboard_content %}
+<div class="max-w-7xl mx-auto">
+    <h1 class="text-2xl font-medium text-black uppercase tracking-wide">DASHBOARD</h1>
+</div>
+<div class="max-w-7xl mx-auto">
+    <!-- Stats -->
+    <div class="mt-12">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Stat card - Users -->
+            <div class="border border-light-gray">
+                <div class="p-8">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                            <i class="fa-solid fa-users text-gray text-xl"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray uppercase tracking-wider">
+                                    Total Users
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-medium text-black">
+                                        1
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 py-4 border-t border-light-gray">
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-black hover:text-dark-gray uppercase tracking-wider text-xs flex items-center">
+                            VIEW ALL
+                            <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat card - Projects -->
+            <div class="border border-light-gray">
+                <div class="p-8">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                            <i class="fa-solid fa-folder-open text-gray text-xl"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray uppercase tracking-wider">
+                                    Active Projects
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-medium text-black">
+                                        0
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 py-4 border-t border-light-gray">
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-black hover:text-dark-gray uppercase tracking-wider text-xs flex items-center">
+                            VIEW ALL
+                            <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat card - Subscription -->
+            <div class="border border-light-gray">
+                <div class="p-8">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                            <i class="fa-solid fa-credit-card text-gray text-xl"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray uppercase tracking-wider">
+                                    Subscription Status
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-medium text-black">
+                                        Free
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 py-4 border-t border-light-gray">
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-black hover:text-dark-gray uppercase tracking-wider text-xs flex items-center">
+                            UPGRADE PLAN
+                            <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="mt-16">
+        <div class="border border-light-gray">
+            <div class="px-8 py-8">
+                <h3 class="text-lg font-medium text-black uppercase tracking-wide flex items-center">
+                    <i class="fa-solid fa-clock-rotate-left mr-2"></i>
+                    Recent Activity
+                </h3>
+                <div class="mt-8">
+                    <div class="flow-root">
+                        <ul role="list" class="-mb-8">
+                            <li>
+                                <div class="relative pb-8">
+                                    <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-light-gray" aria-hidden="true"></span>
+                                    <div class="relative flex space-x-3">
+                                        <div>
+                                            <span class="h-8 w-8 flex items-center justify-center border border-light-gray">
+                                                <i class="fa-solid fa-user text-gray"></i>
+                                            </span>
+                                        </div>
+                                        <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                            <div>
+                                                <p class="text-sm text-gray">Account created</p>
+                                            </div>
+                                            <div class="text-right text-sm whitespace-nowrap text-gray">
+                                                <time datetime="{{ user.date_joined|date:'c' }}">{{ user.date_joined|date:"M d, Y" }}</time>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="mt-16">
+        <div class="border border-light-gray">
+            <div class="px-8 py-8">
+                <h3 class="text-lg font-medium text-black uppercase tracking-wide flex items-center">
+                    <i class="fa-solid fa-bolt mr-2"></i>
+                    Quick Actions
+                </h3>
+                <div class="mt-8">
+                    <div class="space-x-4">
+                        <a href="{% url 'dashboard:profile' %}" class="inline-flex items-center px-8 py-3 text-sm font-medium text-white bg-black hover:bg-dark-gray uppercase tracking-wider">
+                            <i class="fa-solid fa-user-pen mr-2"></i>
+                            UPDATE PROFILE
+                        </a>
+                        <a href="{% url 'dashboard:settings' %}" class="inline-flex items-center px-8 py-3 border border-black text-sm font-medium text-black hover:bg-light-gray uppercase tracking-wider">
+                            <i class="fa-solid fa-gear mr-2"></i>
+                            CONFIGURE SETTINGS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,439 @@
+{% extends "base.html" %}
+
+{% block title %}Features - SaaS Platform{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="py-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl font-medium tracking-tight text-white uppercase">
+                MAIN FEATURES
+            </h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-light-gray">
+                Everything you need to launch your SaaS application, ready to use and customize.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Main Features List -->
+<div class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-sm font-medium tracking-wider uppercase">ALL IN ONE PLACE</h2>
+            <p class="mt-4 text-3xl font-medium tracking-tight text-black uppercase">
+                A COMPLETE FRAMEWORK FOR YOUR SAAS
+            </p>
+            <p class="mx-auto mt-6 max-w-2xl text-xl text-gray">
+                Built with Django, Tailwind CSS, Alpine.js and HTMX to provide the best development and user experience.
+            </p>
+        </div>
+        
+        <div class="mt-16">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Authentication -->
+                <div class="border border-light-gray p-8">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-key text-black text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="mt-8 text-lg font-medium tracking-tight uppercase">Robust Authentication</h3>
+                    <p class="mt-6 text-base text-gray">
+                        Complete authentication system with registration, login, email verification, password recovery, and two-factor authentication.
+                    </p>
+                    <div class="mt-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Registration and login
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Email verification
+                                </p>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        Two-factor authentication (2FA)
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Payments & Subscriptions -->
+                <div class="border border-light-gray p-8">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-credit-card text-black text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="mt-8 text-lg font-medium tracking-tight uppercase">Payments & Subscriptions</h3>
+                    <p class="mt-6 text-base text-gray">
+                        Complete integration with Stripe to manage payments and subscriptions securely and easily.
+                    </p>
+                    <div class="mt-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Stripe integration
+                                </p>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        PayPal integration
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Automatic billing and receipts
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Responsive Design -->
+                <div class="border border-light-gray p-8">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-mobile-screen text-black text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="mt-8 text-lg font-medium tracking-tight uppercase">Responsive Design</h3>
+                    <p class="mt-6 text-base text-gray">
+                        Modern and adaptive interface that works perfectly on mobile devices, tablets, and desktop.
+                    </p>
+                    <div class="mt-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Developed with Tailwind CSS
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Mobile-first approach
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Reusable UI components
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Dashboard -->
+                <div class="border border-light-gray p-8">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-gauge-high text-black text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="mt-8 text-lg font-medium tracking-tight uppercase">Intuitive Dashboard</h3>
+                    <p class="mt-6 text-base text-gray">
+                        Easy-to-use control panel with all the important metrics for your users and for you.
+                    </p>
+                    <div class="mt-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    User management area
+                                </p>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        Real-time charts and statistics
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <p class="ml-3 text-sm text-gray">
+                                    Subscription management
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teams -->
+                <div class="border border-light-gray p-8">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-users text-black text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="mt-8 text-lg font-medium tracking-tight uppercase">Team Management</h3>
+                    <p class="mt-6 text-base text-gray">
+                        Multi-user functionality to collaborate with your team or clients efficiently.
+                    </p>
+                    <div class="mt-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        Team creation and management
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        Role-based permission control
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        Email invitations
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- API & Integrations -->
+                <div class="border border-light-gray p-8">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-plug text-black text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="mt-8 text-lg font-medium tracking-tight uppercase">API & Integrations</h3>
+                    <p class="mt-6 text-base text-gray">
+                        Complete RESTful API and hooks to integrate with other services and platforms.
+                    </p>
+                    <div class="mt-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        RESTful API with Django REST framework
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        API documentation with Swagger/OpenAPI
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock flex-shrink-0 h-5 w-5 text-black"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray">
+                                        Webhooks for external integrations
+                                    </p>
+                                    <span class="text-xs text-black font-medium mt-1 inline-block">COMING SOON</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Technical Stack -->
+<div class="py-16 border-t border-light-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-sm font-medium uppercase tracking-wider">TECHNICAL STACK</h2>
+            <p class="mt-4 text-3xl font-medium tracking-tight text-black uppercase">
+                BUILT WITH MODERN TECHNOLOGIES
+            </p>
+            <p class="mx-auto mt-6 max-w-2xl text-xl text-gray">
+                We use the best tools and frameworks to provide an exceptional development and user experience.
+            </p>
+        </div>
+
+        <div class="mt-16">
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+                <div class="border border-light-gray p-8">
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-brands fa-python text-black text-xl"></i>
+                        </div>
+                        <h3 class="ml-4 text-lg font-medium uppercase">Django + Django REST Framework</h3>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-base text-gray">
+                            High-level Python web framework that encourages rapid development and clean, pragmatic design.
+                        </p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">MVT (Model-View-Template) Architecture</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Powerful and flexible ORM</span>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock h-5 w-5 text-black"></i>
+                                <div class="ml-2">
+                                    <span class="text-sm text-gray">Django REST Framework for APIs</span>
+                                    <span class="text-xs text-black font-medium mt-1 block">COMING SOON</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border border-light-gray p-8">
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-wind text-black text-xl"></i>
+                        </div>
+                        <h3 class="ml-4 text-lg font-medium uppercase">Tailwind CSS</h3>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-base text-gray">
+                            Utility-first CSS framework for rapidly building custom designs without leaving your HTML.
+                        </p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Utility classes for rapid development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Highly customizable and extensible</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Responsive design by default</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border border-light-gray p-8">
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-brands fa-js text-black text-xl"></i>
+                        </div>
+                        <h3 class="ml-4 text-lg font-medium uppercase">Alpine.js</h3>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-base text-gray">
+                            Minimal JavaScript framework for adding behavior to your markup with a simple declarative syntax.
+                        </p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Declarative and reactive syntax</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Lightweight (less than 8kb gzipped)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Integrates perfectly with Tailwind</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border border-light-gray p-8">
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 flex items-center justify-center border border-light-gray">
+                            <i class="fa-solid fa-bolt text-black text-xl"></i>
+                        </div>
+                        <h3 class="ml-4 text-lg font-medium uppercase">HTMX</h3>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-base text-gray">
+                            Library that allows you to access modern browser features directly from HTML, without the need for JavaScript.
+                        </p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock h-5 w-5 text-black"></i>
+                                <div class="ml-2">
+                                    <span class="text-sm text-gray">AJAX, CSS Transitions, WebSockets and Server Sent Events</span>
+                                    <span class="text-xs text-black font-medium mt-1 block">PARTIAL IMPLEMENTATION</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check h-5 w-5 text-black"></i>
+                                <span class="ml-2 text-sm text-gray">Small (~14KB min.gz'd)</span>
+                            </li>
+                            <li class="flex items-start opacity-60">
+                                <i class="fa-solid fa-clock h-5 w-5 text-black"></i>
+                                <div class="ml-2">
+                                    <span class="text-sm text-gray">Interactive experiences without writing JavaScript</span>
+                                    <span class="text-xs text-black font-medium mt-1 block">IN DEVELOPMENT</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- CTA Section -->
+<div class="py-16 bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <h2 class="text-3xl font-medium tracking-tight text-white uppercase">
+            <span class="block">READY TO GET STARTED?</span>
+            <span class="block text-light-gray">Begin your free trial today.</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0 gap-4">
+            <div>
+                <a href="{% url 'account_signup' %}" class="px-8 py-3 bg-white text-black hover:bg-light-gray text-sm font-medium uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-rocket mr-2"></i> START FREE
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'landing:pricing' %}" class="px-8 py-3 border border-white text-white hover:bg-dark-gray text-sm font-medium uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-tag mr-2"></i> SEE PRICING
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,338 @@
+{% extends "base.html" %}
+
+{% block title %}SaaS Platform | Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="pt-20 pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+            <div class="max-w-lg">
+                <h1 class="text-4xl lg:text-5xl font-medium tracking-tight text-black">
+                    <span class="block">YOUR SAAS</span>
+                    <span class="block">SOLUTION</span>
+                </h1>
+                <p class="mt-6 text-xl text-gray">
+                    Launch your SaaS application in minutes, not months. Focus on what really matters: your business.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <a href="{% url 'account_signup' %}" class="px-8 py-3 text-white bg-black hover:bg-dark-gray text-sm font-medium uppercase tracking-wider flex items-center justify-center">
+                        <i class="fa-solid fa-rocket mr-2"></i> START FREE
+                    </a>
+                    <a href="#features" class="px-8 py-3 border border-black text-black hover:bg-light-gray text-sm font-medium uppercase tracking-wider flex items-center justify-center">
+                        <i class="fa-solid fa-arrow-right mr-2"></i> EXPLORE FEATURES
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 lg:mt-0 lg:ml-10 relative">
+                <div class="max-w-md sm:max-w-2xl lg:max-w-none">
+                    <div class="w-full border border-light-gray">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="Dashboard preview" class="w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Technologies Section -->
+<div class="py-16 border-t border-light-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-sm font-medium uppercase tracking-wider text-gray">
+            CUTTING-EDGE TECHNOLOGIES INCLUDED IN THIS BOILERPLATE
+        </p>
+        <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-5">
+            <div class="col-span-1 flex justify-center items-center">
+                <div class="h-16 w-16 border border-light-gray rounded-full flex items-center justify-center">
+                    <i class="fa-brands fa-python text-black text-3xl"></i>
+                </div>
+                <span class="ml-3 text-black font-medium">Django</span>
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+                <div class="h-16 w-16 border border-light-gray rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-wind text-black text-3xl"></i>
+                </div>
+                <span class="ml-3 text-black font-medium">Tailwind CSS</span>
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+                <div class="h-16 w-16 border border-light-gray rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-database text-black text-3xl"></i>
+                </div>
+                <span class="ml-3 text-black font-medium">PostgreSQL</span>
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+                <div class="h-16 w-16 border border-light-gray rounded-full flex items-center justify-center">
+                    <i class="fa-brands fa-js text-black text-3xl"></i>
+                </div>
+                <span class="ml-3 text-black font-medium">Alpine.js</span>
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+                <div class="h-16 w-16 border border-light-gray rounded-full flex items-center justify-center">
+                    <i class="fa-brands fa-stripe text-black text-3xl"></i>
+                </div>
+                <span class="ml-3 text-black font-medium">Stripe</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div id="features" class="py-16 border-t border-light-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-sm font-medium uppercase tracking-wider text-black">FEATURES</h2>
+            <p class="mt-4 text-3xl font-medium tracking-tight text-black">
+                EVERYTHING YOU NEED FOR YOUR SAAS
+            </p>
+            <p class="mt-6 max-w-2xl text-xl text-gray lg:mx-auto">
+                Built with best practices and modern technologies to help you launch your product quickly.
+            </p>
+        </div>
+
+        <div class="mt-16">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                {% for feature in features %}
+                <div class="pt-6">
+                    <div class="h-full border border-light-gray p-8 flex flex-col">
+                        <div>
+                            <div class="w-12 h-12 flex items-center justify-center border border-light-gray text-black">
+                                {% if feature.icon == 'chart-bar' %}
+                                <i class="fa-solid fa-chart-column"></i>
+                                {% elif feature.icon == 'shield-check' %}
+                                <i class="fa-solid fa-shield-halved"></i>
+                                {% elif feature.icon == 'device-mobile' %}
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                {% elif feature.icon == 'credit-card' %}
+                                <i class="fa-solid fa-credit-card"></i>
+                                {% else %}
+                                <i class="fa-solid fa-check"></i>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-medium text-black">{{ feature.title }}</h3>
+                            <p class="mt-4 text-base text-gray">{{ feature.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pricing Section -->
+<div class="py-16 border-t border-light-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-sm font-medium uppercase tracking-wider text-black">PRICING</h2>
+            <p class="mt-4 text-3xl font-medium tracking-tight text-black">
+                SIMPLE AND TRANSPARENT PLANS
+            </p>
+            <p class="mt-6 max-w-2xl text-xl text-gray lg:mx-auto">
+                Start for free and scale as your business grows.
+            </p>
+        </div>
+
+        <div class="mt-16 flex justify-center">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl">
+                <!-- Free Plan -->
+                <div class="border border-light-gray">
+                    <div class="p-8">
+                        <h3 class="text-xl font-medium text-black">FREE</h3>
+                        <p class="mt-4 text-gray">Perfect for testing and getting started.</p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-medium text-black">$0</span>
+                            <span class="text-base text-gray">/month</span>
+                        </p>
+                        <a href="{% url 'account_signup' %}" class="mt-8 block w-full py-3 px-6 border border-black text-center font-medium uppercase tracking-wider text-black hover:bg-light-gray">
+                            START FREE
+                        </a>
+                    </div>
+                    <div class="px-8 pt-6 pb-8 border-t border-light-gray">
+                        <h4 class="text-sm font-medium uppercase tracking-wider text-black">WHAT'S INCLUDED</h4>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">Basic dashboard</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">1 user</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">Maximum 100 records</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">Community support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="border-2 border-black">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-medium text-black">PRO</h3>
+                            <span class="bg-light-gray text-black py-1 px-3 text-xs font-medium uppercase">POPULAR</span>
+                        </div>
+                        <p class="mt-4 text-gray">Everything you need for a growing business.</p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-medium text-black">${{ pricing.monthly_price }}</span>
+                            <span class="text-base text-gray">/month</span>
+                        </p>
+                        <a href="{% url 'account_signup' %}" class="mt-8 block w-full py-3 px-6 text-center font-medium uppercase tracking-wider text-white bg-black hover:bg-dark-gray">
+                            START 14-DAY TRIAL
+                        </a>
+                    </div>
+                    <div class="px-8 pt-6 pb-8 border-t border-light-gray">
+                        <h4 class="text-sm font-medium uppercase tracking-wider text-black">WHAT'S INCLUDED</h4>
+                        <ul class="mt-6 space-y-4">
+                            {% for feature in pricing.features %}
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">{{ feature }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="border border-light-gray">
+                    <div class="p-8">
+                        <h3 class="text-xl font-medium text-black">ENTERPRISE</h3>
+                        <p class="mt-4 text-gray">Custom solutions for large businesses.</p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-medium text-black">Custom</span>
+                        </p>
+                        <a href="#" class="mt-8 block w-full py-3 px-6 border border-black text-center font-medium uppercase tracking-wider text-black hover:bg-light-gray">
+                            CONTACT US
+                        </a>
+                    </div>
+                    <div class="px-8 pt-6 pb-8 border-t border-light-gray">
+                        <h4 class="text-sm font-medium uppercase tracking-wider text-black">WHAT'S INCLUDED</h4>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">All Pro features</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">Unlimited users</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">Guaranteed SLA</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fa-solid fa-check flex-shrink-0 h-5 w-5 text-black"></i>
+                                <span class="text-base text-gray">24/7 priority support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonials -->
+<div class="py-16 border-t border-light-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-sm font-medium uppercase tracking-wider text-black">TESTIMONIALS</h2>
+            <p class="mt-4 text-3xl font-medium tracking-tight text-black">
+                WHAT OUR CUSTOMERS SAY
+            </p>
+            <p class="mt-6 max-w-2xl text-xl text-gray lg:mx-auto">
+                Discover why businesses trust our SaaS solution.
+            </p>
+        </div>
+        
+        <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div class="border border-light-gray p-8">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="h-12 w-12 border border-light-gray flex items-center justify-center">
+                            <i class="fa-solid fa-user text-gray"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-medium text-black">John Smith</h4>
+                        <p class="text-sm text-gray">CEO, Tech Solutions</p>
+                    </div>
+                </div>
+                <div class="mt-6 text-gray">
+                    <p><i class="fa-solid fa-quote-left text-light-gray mr-2"></i>This SaaS template saved us months of development. Now we can focus on what really matters: our customers.<i class="fa-solid fa-quote-right text-light-gray ml-2"></i></p>
+                </div>
+            </div>
+
+            <div class="border border-light-gray p-8">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="h-12 w-12 border border-light-gray flex items-center justify-center">
+                            <i class="fa-solid fa-user text-gray"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-medium text-black">Sarah Johnson</h4>
+                        <p class="text-sm text-gray">CTO, Innovate Inc.</p>
+                    </div>
+                </div>
+                <div class="mt-6 text-gray">
+                    <p><i class="fa-solid fa-quote-left text-light-gray mr-2"></i>The Stripe integration and secure authentication are exactly what we needed. We implemented them and they worked flawlessly.<i class="fa-solid fa-quote-right text-light-gray ml-2"></i></p>
+                </div>
+            </div>
+
+            <div class="border border-light-gray p-8">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="h-12 w-12 border border-light-gray flex items-center justify-center">
+                            <i class="fa-solid fa-user text-gray"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-medium text-black">Michael Brown</h4>
+                        <p class="text-sm text-gray">Founder, StartupLabs</p>
+                    </div>
+                </div>
+                <div class="mt-6 text-gray">
+                    <p><i class="fa-solid fa-quote-left text-light-gray mr-2"></i>The subscription system works perfectly. Our customers can sign up and start using our platform in minutes.<i class="fa-solid fa-quote-right text-light-gray ml-2"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="py-16 bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <h2 class="text-3xl font-medium tracking-tight text-white">
+            <span class="block">READY TO GET STARTED?</span>
+            <span class="block text-light-gray">Begin your free trial today.</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0 gap-4">
+            <div>
+                <a href="{% url 'account_signup' %}" class="px-8 py-3 bg-white text-black hover:bg-light-gray text-sm font-medium uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-rocket mr-2"></i> START FREE
+                </a>
+            </div>
+            <div>
+                <a href="{% url 'landing:features' %}" class="px-8 py-3 border border-white text-white hover:bg-dark-gray text-sm font-medium uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-arrow-right mr-2"></i> SEE FEATURES
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Additional JavaScript if needed
+</script>
+{% endblock %}

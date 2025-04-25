@@ -1,0 +1,171 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Settings - SaaS Platform{% endblock %}
+
+{% block dashboard_content %}
+<div class="max-w-7xl mx-auto">
+    <h1 class="text-2xl font-medium text-black uppercase tracking-wide">SETTINGS</h1>
+</div>
+<div class="max-w-7xl mx-auto">
+    <!-- Notification Settings -->
+    <div class="mt-12">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div>
+                <h3 class="text-lg font-medium text-black uppercase tracking-wide">NOTIFICATIONS</h3>
+                <p class="mt-2 text-sm text-gray">
+                    Decide which communications you'd like to receive.
+                </p>
+            </div>
+            <div class="md:col-span-2">
+                <form action="{% url 'dashboard:settings' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="border border-light-gray">
+                        <div class="px-8 py-8 space-y-8">
+                            <fieldset>
+                                <legend class="text-sm font-medium text-black uppercase tracking-wider">BY EMAIL</legend>
+                                <div class="mt-4 space-y-6">
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="comments" name="comments" type="checkbox" 
+                                                class="h-4 w-4 border-light-gray text-black focus:border-black"
+                                                {% if notification_settings.comments %}checked{% endif %}>
+                                        </div>
+                                        <div class="ml-3">
+                                            <label for="comments" class="font-medium text-black text-sm uppercase tracking-wider">COMMENTS</label>
+                                            <p class="text-gray text-sm mt-1">Get notified when someone comments on your posts.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="updates" name="updates" type="checkbox" 
+                                                class="h-4 w-4 border-light-gray text-black focus:border-black"
+                                                {% if notification_settings.updates %}checked{% endif %}>
+                                        </div>
+                                        <div class="ml-3">
+                                            <label for="updates" class="font-medium text-black text-sm uppercase tracking-wider">UPDATES</label>
+                                            <p class="text-gray text-sm mt-1">Get notified when we release new features and updates.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="marketing" name="marketing" type="checkbox" 
+                                                class="h-4 w-4 border-light-gray text-black focus:border-black"
+                                                {% if notification_settings.marketing %}checked{% endif %}>
+                                        </div>
+                                        <div class="ml-3">
+                                            <label for="marketing" class="font-medium text-black text-sm uppercase tracking-wider">MARKETING</label>
+                                            <p class="text-gray text-sm mt-1">Receive marketing communications and special offers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="px-8 py-4 border-t border-light-gray text-right">
+                            <button type="submit" class="px-8 py-3 text-sm font-medium uppercase tracking-wider text-white bg-black hover:bg-dark-gray">
+                                SAVE
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subscription Settings -->
+    <div class="mt-16">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div>
+                <h3 class="text-lg font-medium text-black uppercase tracking-wide">SUBSCRIPTION</h3>
+                <p class="mt-2 text-sm text-gray">
+                    Manage your subscription and billing information.
+                </p>
+            </div>
+            <div class="md:col-span-2">
+                <div class="border border-light-gray">
+                    <div class="px-8 py-8 space-y-8">
+                        <!-- Current Plan -->
+                        <div>
+                            <h4 class="text-sm font-medium text-black uppercase tracking-wider">CURRENT PLAN</h4>
+                            <div class="mt-4 flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray">You are currently on the <span class="font-medium text-black">{{ subscription.plan|title }} Plan</span></p>
+                                    <p class="text-sm text-gray">Status: <span class="font-medium text-black">{{ subscription.status|title }}</span></p>
+                                </div>
+                                <a href="{% url 'landing:pricing' %}" class="px-4 py-2 text-sm font-medium uppercase tracking-wider text-white bg-black hover:bg-dark-gray">
+                                    UPGRADE PLAN
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="pt-8 border-t border-light-gray">
+                            <h4 class="text-sm font-medium text-black uppercase tracking-wider">PAYMENT METHOD</h4>
+                            <div class="mt-4">
+                                <p class="text-sm text-gray">No payment method added</p>
+                                <button type="button" class="mt-4 px-4 py-2 border border-black text-sm font-medium uppercase tracking-wider text-black hover:bg-light-gray">
+                                    ADD PAYMENT METHOD
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Billing History -->
+                        <div class="pt-8 border-t border-light-gray">
+                            <h4 class="text-sm font-medium text-black uppercase tracking-wider">BILLING HISTORY</h4>
+                            <div class="mt-4">
+                                <p class="text-sm text-gray">No billing history available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Settings -->
+    <div class="mt-16">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div>
+                <h3 class="text-lg font-medium text-black uppercase tracking-wide">API ACCESS</h3>
+                <p class="mt-2 text-sm text-gray">
+                    Manage your API keys and access tokens.
+                </p>
+            </div>
+            <div class="md:col-span-2">
+                <div class="border border-light-gray">
+                    <div class="px-8 py-8 space-y-8">
+                        <div>
+                            <h4 class="text-sm font-medium text-black uppercase tracking-wider">API KEYS</h4>
+                            <div class="mt-4">
+                                {% if api.has_key %}
+                                    <p class="text-sm text-gray">API key generated on {{ api.key_created_at|date:"F j, Y" }}</p>
+                                    <button type="button" class="mt-4 px-4 py-2 border border-black text-sm font-medium uppercase tracking-wider text-black hover:bg-light-gray">
+                                        REGENERATE API KEY
+                                    </button>
+                                {% else %}
+                                    <p class="text-sm text-gray">No API key generated</p>
+                                    <form action="{% url 'dashboard:generate_api_key' %}" method="POST" class="mt-4">
+                                        {% csrf_token %}
+                                        <button type="submit" class="px-4 py-2 border border-black text-sm font-medium uppercase tracking-wider text-black hover:bg-light-gray">
+                                            GENERATE API KEY
+                                        </button>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-light-gray">
+                            <h4 class="text-sm font-medium text-black uppercase tracking-wider">WEBHOOKS</h4>
+                            <div class="mt-4">
+                                <p class="text-sm text-gray">No webhooks configured</p>
+                                <button type="button" class="mt-4 px-4 py-2 border border-black text-sm font-medium uppercase tracking-wider text-black hover:bg-light-gray">
+                                    ADD WEBHOOK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
