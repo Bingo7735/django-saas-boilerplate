@@ -102,7 +102,7 @@ Visit http://localhost:8000 to see your application!
 - **Authentication:** django-allauth
 - **Payments:** Stripe
 - **Email:** SendGrid (recommended)
-- **Deployment:** Docker support included
+
 
 ## 🤝 Contributing
 
