@@ -48,22 +48,17 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. **Set up environment variables:**
-```bash
-cp .env.example .env
-```
-
-5. **Run migrations:**
+4. **Run migrations:**
 ```bash
 python manage.py migrate
 ```
 
-6. **Create a superuser:**
+5. **Create a superuser:**
 ```bash
 python manage.py createsuperuser
 ```
 
-7. **Run the development server:**
+6. **Run the development server:**
 ```bash
 python manage.py runserver
 ```
