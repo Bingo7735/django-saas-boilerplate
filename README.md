@@ -11,6 +11,10 @@
 
 A modern, production-ready Django boilerplate for building SaaS applications with HTMX, Tailwind CSS, and Alpine.js. This template provides everything you need to kickstart your next SaaS project with best practices and modern tooling.
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=eriktaveras/django-saas-boilerplate&type=Date)](https://www.star-history.com/#eriktaveras/django-saas-boilerplate&Date)
+
 ## 🌟 Features
 
 - 🚀 **Django 5.0** with modern best practices and security features
