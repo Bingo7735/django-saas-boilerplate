@@ -109,21 +109,6 @@ We love your input! We want to make contributing to Django SaaS Boilerplate as e
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Maintainer
-
-<div align="center">
-  <img src="https://github.com/eriktaveras.png" width="100px" style="border-radius: 50%;" alt="Erik Taveras">
-</div>
-
-**Erik Taveras** - Full Stack Solutions Developer
-
-- 🌐 Website: [www.eriktaveras.com](https://www.eriktaveras.com)
-- 📧 Email: [hello@eriktaveras.com](mailto:hello@eriktaveras.com)
-- 💻 GitHub: [@eriktaveras](https://github.com/eriktaveras)
-- 🔗 LinkedIn: [Erik Taveras](https://linkedin.com/in/eriktaveras)
-
-Specialized in Python, Django, and building scalable web applications and API solutions for businesses and startups.
-
 ## 🙏 Acknowledgments
 
 - [Django](https://www.djangoproject.com/)
@@ -134,18 +119,3 @@ Specialized in Python, Django, and building scalable web applications and API so
 - [Font Awesome](https://fontawesome.com/)
 - [Space Grotesk Font](https://fonts.google.com/specimen/Space+Grotesk)
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=eriktaveras/django-saas-boilerplate&type=Date)](https://www.star-history.com/#eriktaveras/django-saas-boilerplate&Date)
-
-## 📫 Contact & Support
-
-If you have any questions or suggestions, please:
-
-- 📝 Open an issue
-- 📧 Reach out at [hello@eriktaveras.com](mailto:hello@eriktaveras.com)
-- 🐦 Follow [@eriktaveras](https://twitter.com/eriktaveras) on Twitter
-
-<div align="center">
-  <p>Built with ❤️ by <a href="https://www.eriktaveras.com">Erik Taveras</a></p>
-</div> 
